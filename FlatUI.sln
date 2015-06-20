@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatUI", "src\FlatUI\FlatUI.csproj", "{FC508337-0212-4F3B-88FE-5C9FF09F4D47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlatUI.Examples", "src\FlatUI.Examples\FlatUI.Examples.csproj", "{157778B4-A446-4E49-91B9-78F7B05977EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC508337-0212-4F3B-88FE-5C9FF09F4D47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC508337-0212-4F3B-88FE-5C9FF09F4D47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC508337-0212-4F3B-88FE-5C9FF09F4D47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC508337-0212-4F3B-88FE-5C9FF09F4D47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{157778B4-A446-4E49-91B9-78F7B05977EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{157778B4-A446-4E49-91B9-78F7B05977EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{157778B4-A446-4E49-91B9-78F7B05977EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{157778B4-A446-4E49-91B9-78F7B05977EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
