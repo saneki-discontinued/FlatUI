@@ -1,7 +1,7 @@
 FlatUI
 ======
 
-[Example](screenshots/flatui-example-1.png)
+![Example](screenshots/flatui-example-1.png)
 
 FlatUI is a C# port of the Flat UI theme released by iSynthesis, which
 was written in Visual Basic.
