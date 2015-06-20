@@ -14,8 +14,11 @@ namespace FlatUI
 		private int W;
 		private int H;
 		private int _Value = 0;
-
 		private int _Maximum = 100;
+		private bool _Pattern = true;
+		private bool _ShowBalloon = true;
+		private bool _PercentSign = false;
+
 		#endregion
 
 		#region " Properties"
@@ -66,6 +69,24 @@ namespace FlatUI
 				_Value = value;
 				Invalidate();
 			}
+		}
+
+		public bool Pattern
+		{
+			get { return _Pattern; }
+			set { _Pattern = value; }
+		}
+
+		public bool ShowBalloon
+		{
+			get { return _ShowBalloon; }
+			set { _ShowBalloon = value; }
+		}
+
+		public bool PercentSign
+		{
+			get { return _PercentSign; }
+			set { _PercentSign = value; }
 		}
 
 		#endregion
@@ -168,21 +189,30 @@ namespace FlatUI
 					GP.AddRectangle(new Rectangle(0, 24, iValue - 1, H - 1));
 					_with15.FillPath(new SolidBrush(_ProgressColor), GP);
 
-					//-- Hatch Brush
-					HatchBrush HB = new HatchBrush(HatchStyle.Plaid, _DarkerProgress, _ProgressColor);
-					_with15.FillRectangle(HB, new Rectangle(0, 24, iValue - 1, H - 1));
+					if (_Pattern)
+					{
+						//-- Hatch Brush
+						HatchBrush HB = new HatchBrush(HatchStyle.Plaid, _DarkerProgress, _ProgressColor);
+						_with15.FillRectangle(HB, new Rectangle(0, 24, iValue - 1, H - 1));
+					}
 
-					//-- Balloon
-					Rectangle Balloon = new Rectangle(iValue - 18, 0, 34, 16);
-					GP2 = Helpers.RoundRec(Balloon, 4);
-					_with15.FillPath(new SolidBrush(_BaseColor), GP2);
+					if (_ShowBalloon)
+					{
+						//-- Balloon
+						Rectangle Balloon = new Rectangle(iValue - 18, 0, 34, 16);
+						GP2 = Helpers.RoundRec(Balloon, 4);
+						_with15.FillPath(new SolidBrush(_BaseColor), GP2);
 
-					//-- Arrow
-					GP3 = Helpers.DrawArrow(iValue - 9, 16, true);
-					_with15.FillPath(new SolidBrush(_BaseColor), GP3);
+						//-- Arrow
+						GP3 = Helpers.DrawArrow(iValue - 9, 16, true);
+						_with15.FillPath(new SolidBrush(_BaseColor), GP3);
 
-					//-- Value > You can add "%" > value & "%"
-					_with15.DrawString(Value.ToString(), new Font("Segoe UI", 10), new SolidBrush(_ProgressColor), new Rectangle(iValue - 11, -2, W, H), Helpers.NearSF);
+						//-- Value > You can add "%" > value & "%"
+						string text = (_PercentSign ? Value.ToString() + "%" : Value.ToString());
+						int wOffset = (_PercentSign ? iValue - 15 : iValue - 11);
+						_with15.DrawString(text, new Font("Segoe UI", 10), new SolidBrush(_ProgressColor), new Rectangle(wOffset, -2, W, H), Helpers.NearSF);
+					}
+
 					break;
 			}
 

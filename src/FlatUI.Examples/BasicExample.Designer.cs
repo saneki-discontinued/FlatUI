@@ -393,7 +393,10 @@
 			this.FlatProgressBar.Location = new System.Drawing.Point(0, 358);
 			this.FlatProgressBar.Maximum = 100;
 			this.FlatProgressBar.Name = "FlatProgressBar";
+			this.FlatProgressBar.Pattern = false;
+			this.FlatProgressBar.PercentSign = true;
 			this.FlatProgressBar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+			this.FlatProgressBar.ShowBalloon = false;
 			this.FlatProgressBar.Size = new System.Drawing.Size(730, 42);
 			this.FlatProgressBar.TabIndex = 1;
 			this.FlatProgressBar.Text = "Progress";
