@@ -42,5 +42,26 @@ namespace FlatUI.Examples
 				}).Start();
 			}
 		}
+
+		private void SpawnAlertButton_Click(object sender, EventArgs e)
+		{
+			this.FlatAlertBox.Visible = false;
+			FlatAlertBox._Kind kind = this.GetAlertBoxKind();
+			this.FlatAlertBox.kind = kind;
+			this.FlatAlertBox.Visible = true;
+		}
+
+		/// <summary>
+		/// Get the alert box type from the radio buttons.
+		/// </summary>
+		/// <returns>Alert box kind</returns>
+		private FlatAlertBox._Kind GetAlertBoxKind()
+		{
+			if (this.SuccessRadioButton.Checked)
+				return FlatUI.FlatAlertBox._Kind.Success;
+			else if (this.ErrorRadioButton.Checked)
+				return FlatUI.FlatAlertBox._Kind.Error;
+			else return FlatUI.FlatAlertBox._Kind.Info;
+		}
 	}
 }
