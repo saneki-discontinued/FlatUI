@@ -33,10 +33,10 @@
 			this.FlatToggleStyle2 = new FlatUI.FlatToggle();
 			this.FlatToggleStyle1 = new FlatUI.FlatToggle();
 			this.AlertGroupBox = new FlatUI.FlatGroupBox();
-			this.ErrorRadioButton = new FlatUI.RadioButton();
+			this.ErrorRadioButton = new FlatUI.FlatRadioButton();
 			this.SpawnAlertButton = new FlatUI.FlatButton();
-			this.SuccessRadioButton = new FlatUI.RadioButton();
-			this.InfoRadioButton = new FlatUI.RadioButton();
+			this.SuccessRadioButton = new FlatUI.FlatRadioButton();
+			this.InfoRadioButton = new FlatUI.FlatRadioButton();
 			this.FlatAlertBox = new FlatUI.FlatAlertBox();
 			this.FlatTextBox = new FlatUI.FlatTextBox();
 			this.FlatTabControl = new FlatUI.FlatTabControl();
@@ -152,7 +152,7 @@
 			this.ErrorRadioButton.Font = new System.Drawing.Font("Segoe UI", 10F);
 			this.ErrorRadioButton.Location = new System.Drawing.Point(130, 41);
 			this.ErrorRadioButton.Name = "ErrorRadioButton";
-			this.ErrorRadioButton.Options = FlatUI.RadioButton._Options.Style1;
+			this.ErrorRadioButton.Options = FlatUI.FlatRadioButton._Options.Style1;
 			this.ErrorRadioButton.Size = new System.Drawing.Size(100, 22);
 			this.ErrorRadioButton.TabIndex = 14;
 			this.ErrorRadioButton.Text = "Error";
@@ -180,7 +180,7 @@
 			this.SuccessRadioButton.Font = new System.Drawing.Font("Segoe UI", 10F);
 			this.SuccessRadioButton.Location = new System.Drawing.Point(24, 41);
 			this.SuccessRadioButton.Name = "SuccessRadioButton";
-			this.SuccessRadioButton.Options = FlatUI.RadioButton._Options.Style1;
+			this.SuccessRadioButton.Options = FlatUI.FlatRadioButton._Options.Style1;
 			this.SuccessRadioButton.Size = new System.Drawing.Size(100, 22);
 			this.SuccessRadioButton.TabIndex = 13;
 			this.SuccessRadioButton.Text = "Success";
@@ -193,7 +193,7 @@
 			this.InfoRadioButton.Font = new System.Drawing.Font("Segoe UI", 10F);
 			this.InfoRadioButton.Location = new System.Drawing.Point(236, 41);
 			this.InfoRadioButton.Name = "InfoRadioButton";
-			this.InfoRadioButton.Options = FlatUI.RadioButton._Options.Style1;
+			this.InfoRadioButton.Options = FlatUI.FlatRadioButton._Options.Style1;
 			this.InfoRadioButton.Size = new System.Drawing.Size(100, 22);
 			this.InfoRadioButton.TabIndex = 15;
 			this.InfoRadioButton.Text = "Info";
@@ -444,9 +444,9 @@
 		private FlatButton Tab2Button;
 		private FlatTextBox FlatTextBox;
 		private FlatAlertBox FlatAlertBox;
-		private RadioButton InfoRadioButton;
-		private RadioButton ErrorRadioButton;
-		private RadioButton SuccessRadioButton;
+		private FlatRadioButton InfoRadioButton;
+		private FlatRadioButton ErrorRadioButton;
+		private FlatRadioButton SuccessRadioButton;
 		private FlatButton SpawnAlertButton;
 		private FlatGroupBox AlertGroupBox;
 		private FlatToggle FlatToggleStyle3;

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 namespace FlatUI
 {
 	[DefaultEvent("CheckedChanged")]
-	public class RadioButton : Control
+	public class FlatRadioButton : Control
 	{
 		private MouseState State = MouseState.None;
 		private int W;
@@ -47,9 +47,9 @@ namespace FlatUI
 				return;
 			foreach (Control C in Parent.Controls)
 			{
-				if (!object.ReferenceEquals(C, this) && C is RadioButton)
+				if (!object.ReferenceEquals(C, this) && C is FlatRadioButton)
 				{
-					((RadioButton)C).Checked = false;
+					((FlatRadioButton)C).Checked = false;
 					Invalidate();
 				}
 			}
@@ -113,7 +113,7 @@ namespace FlatUI
 		private Color _BorderColor = Helpers.FlatColor;
 		private Color _TextColor = Color.FromArgb(243, 243, 243);
 
-		public RadioButton()
+		public FlatRadioButton()
 		{
 			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer, true);
 			DoubleBuffered = true;
