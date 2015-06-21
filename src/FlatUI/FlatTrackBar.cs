@@ -10,21 +10,13 @@ namespace FlatUI
 	[DefaultEvent("Scroll")]
 	public class FlatTrackBar : Control
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private int Val;
 		private bool Bool;
 		private Rectangle Track;
 		private Rectangle Knob;
-
 		private _Style Style_;
-		#endregion
-
-		#region " Properties"
-
-		#region " Mouse States"
 
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
@@ -53,10 +45,6 @@ namespace FlatUI
 			Bool = false;
 		}
 
-		#endregion
-
-		#region " Styles"
-
 		[Flags()]
 		public enum _Style
 		{
@@ -69,10 +57,6 @@ namespace FlatUI
 			get { return Style_; }
 			set { Style_ = value; }
 		}
-
-		#endregion
-
-		#region " Colors"
 
 		[Category("Colors")]
 		public Color TrackColor
@@ -88,10 +72,9 @@ namespace FlatUI
 			set { _HatchColor = value; }
 		}
 
-		#endregion
-
 		public event ScrollEventHandler Scroll;
 		public delegate void ScrollEventHandler(object sender);
+
 		private int _Minimum;
 		public int Minimum
 		{
@@ -116,6 +99,7 @@ namespace FlatUI
 				Invalidate();
 			}
 		}
+
 		private int _Maximum = 10;
 		public int Maximum
 		{
@@ -134,6 +118,7 @@ namespace FlatUI
 				Invalidate();
 			}
 		}
+
 		private int _Value;
 		public int Value
 		{
@@ -155,6 +140,7 @@ namespace FlatUI
 				}
 			}
 		}
+
 		private bool _ShowValue = false;
 		public bool ShowValue
 		{
@@ -191,16 +177,10 @@ namespace FlatUI
 			Height = 23;
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		private Color BaseColor = Color.FromArgb(45, 47, 49);
 		private Color _TrackColor = Helpers.FlatColor;
 		private Color SliderColor = Color.FromArgb(25, 27, 29);
-
 		private Color _HatchColor = Color.FromArgb(23, 148, 92);
-		#endregion
 
 		public FlatTrackBar()
 		{

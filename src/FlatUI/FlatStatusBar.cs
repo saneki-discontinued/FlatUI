@@ -9,15 +9,9 @@ namespace FlatUI
 {
 	public class FlatStatusBar : Control
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
-
 		private bool _ShowTimeDate = false;
-		#endregion
-
-		#region " Properties"
 
 		protected override void CreateHandle()
 		{
@@ -30,8 +24,6 @@ namespace FlatUI
 			base.OnTextChanged(e);
 			Invalidate();
 		}
-
-		#region " Colors"
 
 		[Category("Colors")]
 		public Color BaseColor
@@ -54,8 +46,6 @@ namespace FlatUI
 			set { _RectColor = value; }
 		}
 
-		#endregion
-
 		public bool ShowTimeDate
 		{
 			get { return _ShowTimeDate; }
@@ -67,15 +57,9 @@ namespace FlatUI
 			return DateTime.Now.Date + " " + DateTime.Now.Hour + ":" + DateTime.Now.Minute;
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Color.FromArgb(45, 47, 49);
 		private Color _TextColor = Color.White;
-
 		private Color _RectColor = Helpers.FlatColor;
-		#endregion
 
 		public FlatStatusBar()
 		{

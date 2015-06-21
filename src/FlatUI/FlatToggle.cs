@@ -10,17 +10,12 @@ namespace FlatUI
 	[DefaultEvent("CheckedChanged")]
 	public class FlatToggle : Control
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private _Options O;
 		private bool _Checked = false;
-
 		private MouseState State = MouseState.None;
-		#endregion
 
-		#region " Properties"
 		public event CheckedChangedEventHandler CheckedChanged;
 		public delegate void CheckedChangedEventHandler(object sender);
 
@@ -36,8 +31,6 @@ namespace FlatUI
 			//-- TODO: New Style
 		}
 
-		#region " Options"
-
 		[Category("Options")]
 		public _Options Options
 		{
@@ -52,8 +45,6 @@ namespace FlatUI
 			set { _Checked = value; }
 		}
 
-		#endregion
-
 		protected override void OnTextChanged(EventArgs e)
 		{
 			base.OnTextChanged(e);
@@ -67,20 +58,20 @@ namespace FlatUI
 			Height = 33;
 		}
 
-		#region " Mouse States"
-
 		protected override void OnMouseEnter(System.EventArgs e)
 		{
 			base.OnMouseEnter(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseDown(System.Windows.Forms.MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
 			State = MouseState.Down;
 			Invalidate();
 		}
+
 		protected override void OnMouseLeave(System.EventArgs e)
 		{
 			base.OnMouseLeave(e);
@@ -93,6 +84,7 @@ namespace FlatUI
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnClick(EventArgs e)
 		{
 			base.OnClick(e);
@@ -103,19 +95,11 @@ namespace FlatUI
 			}
 		}
 
-		#endregion
-
-		#endregion
-
-		#region " Colors"
-
 		private Color BaseColor = Helpers.FlatColor;
 		private Color BaseColorRed = Color.FromArgb(220, 85, 96);
 		private Color BGColor = Color.FromArgb(84, 85, 86);
 		private Color ToggleColor = Color.FromArgb(45, 47, 49);
-
 		private Color TextColor = Color.FromArgb(243, 243, 243);
-		#endregion
 
 		public FlatToggle()
 		{

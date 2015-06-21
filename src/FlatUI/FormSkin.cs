@@ -8,20 +8,12 @@ namespace FlatUI
 {
 	public class FormSkin : ContainerControl
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private bool Cap = false;
 		private bool _HeaderMaximize = false;
 		private Point MousePoint = new Point(0, 0);
-
 		private int MoveHeight = 50;
-		#endregion
-
-		#region " Properties"
-
-		#region " Colors"
 
 		[Category("Colors")]
 		public Color HeaderColor
@@ -29,18 +21,21 @@ namespace FlatUI
 			get { return _HeaderColor; }
 			set { _HeaderColor = value; }
 		}
+
 		[Category("Colors")]
 		public Color BaseColor
 		{
 			get { return _BaseColor; }
 			set { _BaseColor = value; }
 		}
+
 		[Category("Colors")]
 		public Color BorderColor
 		{
 			get { return _BorderColor; }
 			set { _BorderColor = value; }
 		}
+
 		[Category("Colors")]
 		public Color FlatColor
 		{
@@ -48,18 +43,12 @@ namespace FlatUI
 			// set { Helpers.FlatColor = value; }
 		}
 
-		#endregion
-
-		#region " Options"
-
 		[Category("Options")]
 		public bool HeaderMaximize
 		{
 			get { return _HeaderMaximize; }
 			set { _HeaderMaximize = value; }
 		}
-
-		#endregion
 
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
@@ -121,28 +110,14 @@ namespace FlatUI
 			Invalidate();
 		}
 
-		#endregion
-
-		#region " Colors"
-
-		#region " Dark Colors"
-
 		private Color _HeaderColor = Color.FromArgb(45, 47, 49);
 		private Color _BaseColor = Color.FromArgb(60, 70, 73);
 		private Color _BorderColor = Color.FromArgb(53, 58, 60);
-
 		private Color TextColor = Color.FromArgb(234, 234, 234);
-		#endregion
-
-		#region " Light Colors"
 
 		private Color _HeaderLight = Color.FromArgb(171, 171, 172);
 		private Color _BaseLight = Color.FromArgb(196, 199, 200);
-
 		public Color TextLight = Color.FromArgb(45, 47, 49);
-		#endregion
-
-		#endregion
 
 		public FormSkin()
 		{

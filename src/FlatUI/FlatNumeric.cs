@@ -9,8 +9,6 @@ namespace FlatUI
 {
 	public class FlatNumeric : Control
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private MouseState State = MouseState.None;
@@ -19,11 +17,7 @@ namespace FlatUI
 		private long _Value;
 		private long _Min;
 		private long _Max;
-
 		private bool Bool;
-		#endregion
-
-		#region " Properties"
 
 		public long Value
 		{
@@ -129,8 +123,6 @@ namespace FlatUI
 			Height = 30;
 		}
 
-		#region " Colors"
-
 		[Category("Colors")]
 		public Color BaseColor
 		{
@@ -145,16 +137,8 @@ namespace FlatUI
 			set { _ButtonColor = value; }
 		}
 
-		#endregion
-
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Color.FromArgb(45, 47, 49);
-
 		private Color _ButtonColor = Helpers.FlatColor;
-		#endregion
 
 		public FlatNumeric()
 		{
@@ -166,7 +150,6 @@ namespace FlatUI
 			_Min = 0;
 			_Max = 9999999;
 		}
-
 
 		protected override void OnPaint(PaintEventArgs e)
 		{

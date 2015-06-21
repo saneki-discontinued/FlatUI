@@ -9,18 +9,10 @@ namespace FlatUI
 {
 	public class FlatButton : Control
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private bool _Rounded = false;
-
 		private MouseState State = MouseState.None;
-		#endregion
-
-		#region " Properties"
-
-		#region " Colors"
 
 		[Category("Colors")]
 		public Color BaseColor
@@ -43,28 +35,27 @@ namespace FlatUI
 			set { _Rounded = value; }
 		}
 
-		#endregion
-
-		#region " Mouse States"
-
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
 			State = MouseState.Down;
 			Invalidate();
 		}
+
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
 			base.OnMouseUp(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseEnter(EventArgs e)
 		{
 			base.OnMouseEnter(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseLeave(EventArgs e)
 		{
 			base.OnMouseLeave(e);
@@ -72,16 +63,8 @@ namespace FlatUI
 			Invalidate();
 		}
 
-		#endregion
-
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Helpers.FlatColor;
-
 		private Color _TextColor = Color.FromArgb(243, 243, 243);
-		#endregion
 
 		public FlatButton()
 		{

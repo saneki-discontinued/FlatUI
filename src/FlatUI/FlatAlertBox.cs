@@ -14,8 +14,6 @@ namespace FlatUI
 		/// </summary>
 		/// <remarks></remarks>
 
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private _Kind K;
@@ -40,9 +38,6 @@ namespace FlatUI
 			}
 
 		}
-		#endregion
-
-		#region " Properties"
 
 		[Flags()]
 		public enum _Kind
@@ -51,8 +46,6 @@ namespace FlatUI
 			Error,
 			Info
 		}
-
-		#region " Options"
 
 		[Category("Options")]
 		public _Kind kind
@@ -81,8 +74,6 @@ namespace FlatUI
 			get { return base.Visible == false; }
 			set { base.Visible = value; }
 		}
-
-		#endregion
 
 		protected override void OnTextChanged(EventArgs e)
 		{
@@ -113,26 +104,27 @@ namespace FlatUI
 			T.Dispose();
 		}
 
-		#region " Mouse States"
-
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
 			State = MouseState.Down;
 			Invalidate();
 		}
+
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
 			base.OnMouseUp(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseEnter(EventArgs e)
 		{
 			base.OnMouseEnter(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseLeave(EventArgs e)
 		{
 			base.OnMouseLeave(e);
@@ -153,20 +145,12 @@ namespace FlatUI
 			this.Visible = false;
 		}
 
-		#endregion
-
-		#endregion
-
-		#region " Colors"
-
 		private Color SuccessColor = Color.FromArgb(60, 85, 79);
 		private Color SuccessText = Color.FromArgb(35, 169, 110);
 		private Color ErrorColor = Color.FromArgb(87, 71, 71);
 		private Color ErrorText = Color.FromArgb(254, 142, 122);
 		private Color InfoColor = Color.FromArgb(70, 91, 94);
-
 		private Color InfoText = Color.FromArgb(97, 185, 186);
-		#endregion
 
 		public FlatAlertBox()
 		{
@@ -271,13 +255,11 @@ namespace FlatUI
 					break;
 			}
 
-
 			base.OnPaint(e);
 			G.Dispose();
 			e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
 			e.Graphics.DrawImageUnscaled(B, 0, 0);
 			B.Dispose();
 		}
-
 	}
 }

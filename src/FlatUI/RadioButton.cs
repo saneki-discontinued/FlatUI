@@ -4,22 +4,18 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Text;
 using System.Windows.Forms;
+
 namespace FlatUI
 {
 	[DefaultEvent("CheckedChanged")]
 	public class RadioButton : Control
 	{
-		#region " Variables"
-
 		private MouseState State = MouseState.None;
 		private int W;
 		private int H;
 		private _Options O;
 
 		private bool _Checked;
-		#endregion
-
-		#region " Properties"
 		public bool Checked
 		{
 			get { return _Checked; }
@@ -34,14 +30,17 @@ namespace FlatUI
 				Invalidate();
 			}
 		}
+
 		public event CheckedChangedEventHandler CheckedChanged;
 		public delegate void CheckedChangedEventHandler(object sender);
+
 		protected override void OnClick(EventArgs e)
 		{
 			if (!_Checked)
 				Checked = true;
 			base.OnClick(e);
 		}
+
 		private void InvalidateControls()
 		{
 			if (!IsHandleCreated || !_Checked)
@@ -55,6 +54,7 @@ namespace FlatUI
 				}
 			}
 		}
+
 		protected override void OnCreateControl()
 		{
 			base.OnCreateControl();
@@ -81,26 +81,27 @@ namespace FlatUI
 			Height = 22;
 		}
 
-		#region " Mouse States"
-
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
 			State = MouseState.Down;
 			Invalidate();
 		}
+
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
 			base.OnMouseUp(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseEnter(EventArgs e)
 		{
 			base.OnMouseEnter(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseLeave(EventArgs e)
 		{
 			base.OnMouseLeave(e);
@@ -108,16 +109,9 @@ namespace FlatUI
 			Invalidate();
 		}
 
-		#endregion
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Color.FromArgb(45, 47, 49);
 		private Color _BorderColor = Helpers.FlatColor;
-
 		private Color _TextColor = Color.FromArgb(243, 243, 243);
-		#endregion
 
 		public RadioButton()
 		{

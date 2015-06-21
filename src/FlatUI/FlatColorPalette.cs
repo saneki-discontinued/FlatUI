@@ -9,14 +9,8 @@ namespace FlatUI
 {
 	public class FlatColorPalette : Control
 	{
-		#region " Variables"
-
 		private int W;
-
 		private int H;
-		#endregion
-
-		#region " Properties"
 
 		protected override void OnResize(EventArgs e)
 		{
@@ -24,8 +18,6 @@ namespace FlatUI
 			Width = 180;
 			Height = 80;
 		}
-
-		#region " Colors"
 
 		[Category("Colors")]
 		public Color Red
@@ -90,12 +82,6 @@ namespace FlatUI
 			set { _White = value; }
 		}
 
-		#endregion
-
-		#endregion
-
-		#region " Colors"
-
 		private Color _Red = Color.FromArgb(220, 85, 96);
 		private Color _Cyan = Color.FromArgb(10, 154, 157);
 		private Color _Blue = Color.FromArgb(0, 128, 255);
@@ -104,9 +90,7 @@ namespace FlatUI
 		private Color _Purple = Color.FromArgb(155, 88, 181);
 		private Color _Black = Color.FromArgb(45, 47, 49);
 		private Color _Gray = Color.FromArgb(63, 70, 73);
-
 		private Color _White = Color.FromArgb(243, 243, 243);
-		#endregion
 
 		public FlatColorPalette()
 		{

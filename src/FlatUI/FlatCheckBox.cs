@@ -10,17 +10,12 @@ namespace FlatUI
 	[DefaultEvent("CheckedChanged")]
 	public class FlatCheckBox : Control
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private MouseState State = MouseState.None;
 		private _Options O;
-
 		private bool _Checked;
-		#endregion
 
-		#region " Properties"
 		protected override void OnTextChanged(System.EventArgs e)
 		{
 			base.OnTextChanged(e);
@@ -69,8 +64,6 @@ namespace FlatUI
 			Height = 22;
 		}
 
-		#region " Colors"
-
 		[Category("Colors")]
 		public Color BaseColor
 		{
@@ -85,28 +78,27 @@ namespace FlatUI
 			set { _BorderColor = value; }
 		}
 
-		#endregion
-
-		#region " Mouse States"
-
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
 			State = MouseState.Down;
 			Invalidate();
 		}
+
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
 			base.OnMouseUp(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseEnter(EventArgs e)
 		{
 			base.OnMouseEnter(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseLeave(EventArgs e)
 		{
 			base.OnMouseLeave(e);
@@ -114,17 +106,9 @@ namespace FlatUI
 			Invalidate();
 		}
 
-		#endregion
-
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Color.FromArgb(45, 47, 49);
 		private Color _BorderColor = Helpers.FlatColor;
-
 		private Color _TextColor = Color.FromArgb(243, 243, 243);
-		#endregion
 
 		public FlatCheckBox()
 		{

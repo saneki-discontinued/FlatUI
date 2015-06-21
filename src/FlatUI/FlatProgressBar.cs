@@ -9,8 +9,6 @@ namespace FlatUI
 {
 	public class FlatProgressBar : Control
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private int _Value = 0;
@@ -18,12 +16,6 @@ namespace FlatUI
 		private bool _Pattern = true;
 		private bool _ShowBalloon = true;
 		private bool _PercentSign = false;
-
-		#endregion
-
-		#region " Properties"
-
-		#region " Control"
 
 		[Category("Control")]
 		public int Maximum
@@ -89,10 +81,6 @@ namespace FlatUI
 			set { _PercentSign = value; }
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		[Category("Colors")]
 		public Color ProgressColor
 		{
@@ -106,8 +94,6 @@ namespace FlatUI
 			get { return _DarkerProgress; }
 			set { _DarkerProgress = value; }
 		}
-
-		#endregion
 
 		protected override void OnResize(EventArgs e)
 		{
@@ -126,15 +112,9 @@ namespace FlatUI
 			Value += Amount;
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Color.FromArgb(45, 47, 49);
 		private Color _ProgressColor = Helpers.FlatColor;
-
 		private Color _DarkerProgress = Color.FromArgb(23, 148, 92);
-		#endregion
 
 		public FlatProgressBar()
 		{

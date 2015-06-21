@@ -9,19 +9,11 @@ namespace FlatUI
 {
 	public class FlatComboBox : ComboBox
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private int _StartIndex = 0;
 		private int x;
-
 		private int y;
-		#endregion
-
-		#region " Properties"
-
-		#region " Mouse States"
 
 		private MouseState State = MouseState.None;
 		protected override void OnMouseDown(MouseEventArgs e)
@@ -30,18 +22,21 @@ namespace FlatUI
 			State = MouseState.Down;
 			Invalidate();
 		}
+
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
 			base.OnMouseUp(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseEnter(EventArgs e)
 		{
 			base.OnMouseEnter(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseLeave(EventArgs e)
 		{
 			base.OnMouseLeave(e);
@@ -77,18 +72,12 @@ namespace FlatUI
 			Invalidate();
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		[Category("Colors")]
 		public Color HoverColor
 		{
 			get { return _HoverColor; }
 			set { _HoverColor = value; }
 		}
-
-		#endregion
 
 		private int StartIndex
 		{
@@ -143,15 +132,9 @@ namespace FlatUI
 			Height = 18;
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Color.FromArgb(25, 27, 29);
 		private Color _BGColor = Color.FromArgb(45, 47, 49);
-
 		private Color _HoverColor = Color.FromArgb(35, 168, 109);
-		#endregion
 
 		public FlatComboBox()
 		{

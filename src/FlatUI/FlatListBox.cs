@@ -9,8 +9,6 @@ namespace FlatUI
 {
 	public class FlatListBox : Control
 	{
-		#region " Variables"
-
 		private ListBox withEventsField_ListBx = new ListBox();
 		private ListBox ListBx
 		{
@@ -30,9 +28,6 @@ namespace FlatUI
 		}
 
 		private string[] _items = { "" };
-		#endregion
-
-		#region " Poperties"
 
 		[Category("Options")]
 		public string[] items
@@ -138,14 +133,8 @@ namespace FlatUI
 			ListBx.Items.Add(item);
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		private Color BaseColor = Color.FromArgb(45, 47, 49);
-
 		private Color _SelectedColor = Helpers.FlatColor;
-		#endregion
 
 		public FlatListBox()
 		{

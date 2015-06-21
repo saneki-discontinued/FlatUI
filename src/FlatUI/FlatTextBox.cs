@@ -10,18 +10,10 @@ namespace FlatUI
 	[DefaultEvent("TextChanged")]
 	public class FlatTextBox : Control
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private MouseState State = MouseState.None;
-
 		private System.Windows.Forms.TextBox TB;
-		#endregion
-
-		#region " Properties"
-
-		#region " TextBox Properties"
 
 		private HorizontalAlignment _TextAlign = HorizontalAlignment.Left;
 		[Category("Options")]
@@ -37,6 +29,7 @@ namespace FlatUI
 				}
 			}
 		}
+
 		private int _MaxLength = 32767;
 		[Category("Options")]
 		public int MaxLength
@@ -51,6 +44,7 @@ namespace FlatUI
 				}
 			}
 		}
+
 		private bool _ReadOnly;
 		[Category("Options")]
 		public bool ReadOnly
@@ -65,6 +59,7 @@ namespace FlatUI
 				}
 			}
 		}
+
 		private bool _UseSystemPasswordChar;
 		[Category("Options")]
 		public bool UseSystemPasswordChar
@@ -79,6 +74,7 @@ namespace FlatUI
 				}
 			}
 		}
+
 		private bool _Multiline;
 		[Category("Options")]
 		public bool Multiline
@@ -103,6 +99,7 @@ namespace FlatUI
 				}
 			}
 		}
+
 		[Category("Options")]
 		public override string Text
 		{
@@ -116,6 +113,7 @@ namespace FlatUI
 				}
 			}
 		}
+
 		[Category("Options")]
 		public override Font Font
 		{
@@ -145,10 +143,12 @@ namespace FlatUI
 				Controls.Add(TB);
 			}
 		}
+
 		private void OnBaseTextChanged(object s, EventArgs e)
 		{
 			Text = TB.Text;
 		}
+
 		private void OnBaseKeyDown(object s, KeyEventArgs e)
 		{
 			if (e.Control && e.KeyCode == Keys.A)
@@ -162,6 +162,7 @@ namespace FlatUI
 				e.SuppressKeyPress = true;
 			}
 		}
+
 		protected override void OnResize(EventArgs e)
 		{
 			TB.Location = new Point(5, 5);
@@ -179,10 +180,6 @@ namespace FlatUI
 			base.OnResize(e);
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		[Category("Colors")]
 		public Color TextColor
 		{
@@ -196,16 +193,13 @@ namespace FlatUI
 			set { _TextColor = value; }
 		}
 
-		#endregion
-
-		#region " Mouse States"
-
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
 			State = MouseState.Down;
 			Invalidate();
 		}
+
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
 			base.OnMouseUp(e);
@@ -213,6 +207,7 @@ namespace FlatUI
 			TB.Focus();
 			Invalidate();
 		}
+
 		protected override void OnMouseEnter(EventArgs e)
 		{
 			base.OnMouseEnter(e);
@@ -220,6 +215,7 @@ namespace FlatUI
 			TB.Focus();
 			Invalidate();
 		}
+
 		protected override void OnMouseLeave(EventArgs e)
 		{
 			base.OnMouseLeave(e);
@@ -227,17 +223,9 @@ namespace FlatUI
 			Invalidate();
 		}
 
-		#endregion
-
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Color.FromArgb(45, 47, 49);
 		private Color _TextColor = Color.FromArgb(192, 192, 192);
-
 		private Color _BorderColor = Helpers.FlatColor;
-		#endregion
 
 		public FlatTextBox()
 		{

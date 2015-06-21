@@ -10,18 +10,10 @@ namespace FlatUI
 {
 	public class FlatStickyButton : Control
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
 		private MouseState State = MouseState.None;
-
 		private bool _Rounded = false;
-		#endregion
-
-		#region " Properties"
-
-		#region " MouseStates"
 
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
@@ -29,28 +21,27 @@ namespace FlatUI
 			State = MouseState.Down;
 			Invalidate();
 		}
+
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
 			base.OnMouseUp(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseEnter(EventArgs e)
 		{
 			base.OnMouseEnter(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseLeave(EventArgs e)
 		{
 			base.OnMouseLeave(e);
 			State = MouseState.None;
 			Invalidate();
 		}
-
-		#endregion
-
-		#region " Function"
 
 		private bool[] GetConnectedSides()
 		{
@@ -76,10 +67,6 @@ namespace FlatUI
 			get { return new Rectangle(Left, Top, Width, Height); }
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		[Category("Colors")]
 		public Color BaseColor
 		{
@@ -101,8 +88,6 @@ namespace FlatUI
 			set { _Rounded = value; }
 		}
 
-		#endregion
-
 		protected override void OnResize(EventArgs e)
 		{
 			base.OnResize(e);
@@ -115,14 +100,8 @@ namespace FlatUI
 			//Size = New Size(112, 32)
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Helpers.FlatColor;
-
 		private Color _TextColor = Color.FromArgb(243, 243, 243);
-		#endregion
 
 		public FlatStickyButton()
 		{

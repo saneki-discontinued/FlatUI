@@ -8,12 +8,7 @@ namespace FlatUI
 {
 	public class FlatTreeView : TreeView
 	{
-		#region " Variables"
-
 		private TreeNodeStates State;
-		#endregion
-
-		#region " Properties"
 
 		protected override void OnDrawNode(DrawTreeNodeEventArgs e)
 		{
@@ -49,14 +44,8 @@ namespace FlatUI
 			base.OnDrawNode(e);
 		}
 
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Color.FromArgb(45, 47, 49);
-
 		private Color _LineColor = Color.FromArgb(25, 27, 29);
-		#endregion
 
 		public FlatTreeView()
 		{

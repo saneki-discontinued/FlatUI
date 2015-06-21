@@ -31,10 +31,6 @@ namespace FlatUI
 
 		public class TColorTable : ProfessionalColorTable
 		{
-			#region " Properties"
-
-			#region " Colors"
-
 			[Category("Colors")]
 			public Color _BackColor
 			{
@@ -56,70 +52,69 @@ namespace FlatUI
 				set { BorderColor = value; }
 			}
 
-			#endregion
-
-			#endregion
-
-			#region " Colors"
-
 			private Color BackColor = Color.FromArgb(45, 47, 49);
 			private Color CheckedColor = Helpers.FlatColor;
-
 			private Color BorderColor = Color.FromArgb(53, 58, 60);
-			#endregion
-
-			#region " Overrides"
 
 			public override Color ButtonSelectedBorder
 			{
 				get { return BackColor; }
 			}
+
 			public override Color CheckBackground
 			{
 				get { return CheckedColor; }
 			}
+
 			public override Color CheckPressedBackground
 			{
 				get { return CheckedColor; }
 			}
+
 			public override Color CheckSelectedBackground
 			{
 				get { return CheckedColor; }
 			}
+
 			public override Color ImageMarginGradientBegin
 			{
 				get { return CheckedColor; }
 			}
+
 			public override Color ImageMarginGradientEnd
 			{
 				get { return CheckedColor; }
 			}
+
 			public override Color ImageMarginGradientMiddle
 			{
 				get { return CheckedColor; }
 			}
+
 			public override Color MenuBorder
 			{
 				get { return BorderColor; }
 			}
+
 			public override Color MenuItemBorder
 			{
 				get { return BorderColor; }
 			}
+
 			public override Color MenuItemSelected
 			{
 				get { return CheckedColor; }
 			}
+
 			public override Color SeparatorDark
 			{
 				get { return BorderColor; }
 			}
+
 			public override Color ToolStripDropDownBackground
 			{
 				get { return BackColor; }
 			}
-
-			#endregion
 		}
 	}
 }

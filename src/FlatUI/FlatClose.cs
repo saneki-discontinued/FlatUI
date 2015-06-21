@@ -9,16 +9,8 @@ namespace FlatUI
 {
 	public class FlatClose : Control
 	{
-		#region " Variables"
-
 		private MouseState State = MouseState.None;
-
 		private int x;
-		#endregion
-
-		#region " Properties"
-
-		#region " Mouse States"
 
 		protected override void OnMouseEnter(EventArgs e)
 		{
@@ -26,24 +18,28 @@ namespace FlatUI
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseDown(MouseEventArgs e)
 		{
 			base.OnMouseDown(e);
 			State = MouseState.Down;
 			Invalidate();
 		}
+
 		protected override void OnMouseLeave(EventArgs e)
 		{
 			base.OnMouseLeave(e);
 			State = MouseState.None;
 			Invalidate();
 		}
+
 		protected override void OnMouseUp(MouseEventArgs e)
 		{
 			base.OnMouseUp(e);
 			State = MouseState.Over;
 			Invalidate();
 		}
+
 		protected override void OnMouseMove(MouseEventArgs e)
 		{
 			base.OnMouseMove(e);
@@ -57,15 +53,11 @@ namespace FlatUI
 			Environment.Exit(0);
 		}
 
-		#endregion
-
 		protected override void OnResize(EventArgs e)
 		{
 			base.OnResize(e);
 			Size = new Size(18, 18);
 		}
-
-		#region " Colors"
 
 		[Category("Colors")]
 		public Color BaseColor
@@ -81,16 +73,8 @@ namespace FlatUI
 			set { _TextColor = value; }
 		}
 
-		#endregion
-
-		#endregion
-
-		#region " Colors"
-
 		private Color _BaseColor = Color.FromArgb(168, 35, 35);
-
 		private Color _TextColor = Color.FromArgb(243, 243, 243);
-		#endregion
 
 		public FlatClose()
 		{

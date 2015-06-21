@@ -9,22 +9,14 @@ namespace FlatUI
 {
 	public class FlatTabControl : TabControl
 	{
-		#region " Variables"
-
 		private int W;
-
 		private int H;
-		#endregion
-
-		#region " Properties"
 
 		protected override void CreateHandle()
 		{
 			base.CreateHandle();
 			Alignment = TabAlignment.Top;
 		}
-
-		#region " Colors"
 
 		[Category("Colors")]
 		public Color BaseColor
@@ -40,17 +32,9 @@ namespace FlatUI
 			set { _ActiveColor = value; }
 		}
 
-		#endregion
-
-		#endregion
-
-		#region " Colors"
-
 		private Color BGColor = Color.FromArgb(60, 70, 73);
 		private Color _BaseColor = Color.FromArgb(45, 47, 49);
-
 		private Color _ActiveColor = Helpers.FlatColor;
-		#endregion
 
 		public FlatTabControl()
 		{

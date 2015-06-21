@@ -8,15 +8,9 @@ namespace FlatUI
 {
 	public class FlatGroupBox : ContainerControl
 	{
-		#region " Variables"
-
 		private int W;
 		private int H;
-
 		private bool _ShowText = true;
-		#endregion
-
-		#region " Properties"
 
 		[Category("Colors")]
 		public Color BaseColor
@@ -31,13 +25,7 @@ namespace FlatUI
 			set { _ShowText = value; }
 		}
 
-		#endregion
-
-		#region " Colors"
-
-
 		private Color _BaseColor = Color.FromArgb(60, 70, 73);
-		#endregion
 
 		public FlatGroupBox()
 		{
