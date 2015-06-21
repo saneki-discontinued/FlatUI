@@ -23,7 +23,7 @@ namespace FlatUI
 			base.OnMouseDown(e);
 			if (e.Button == System.Windows.Forms.MouseButtons.Left)
 			{
-				Val = Convert.ToInt32((_Value - _Minimum) / (_Maximum - _Minimum) * (Width - 11));
+				Val = Convert.ToInt32((float)(_Value - _Minimum) / (float)(_Maximum - _Minimum) * (float)(Width - 11));
 				Track = new Rectangle(Val, 0, 10, 20);
 
 				Bool = Track.Contains(e.Location);
@@ -35,7 +35,7 @@ namespace FlatUI
 			base.OnMouseMove(e);
 			if (Bool && e.X > -1 && e.X < (Width + 1))
 			{
-				Value = _Minimum + Convert.ToInt32((_Maximum - _Minimum) * (e.X / Width));
+				Value = _Minimum + Convert.ToInt32((float)(_Maximum - _Minimum) * ((float)e.X / (float)Width));
 			}
 		}
 
@@ -201,7 +201,7 @@ namespace FlatUI
 			H = Height - 1;
 
 			Rectangle Base = new Rectangle(1, 6, W - 2, 8);
-			dynamic GP = null;
+			GraphicsPath GP = new GraphicsPath();
 			GraphicsPath GP2 = new GraphicsPath();
 
 			var _with20 = G;
@@ -211,7 +211,7 @@ namespace FlatUI
 			_with20.Clear(BackColor);
 
 			//-- Value
-			Val = Convert.ToInt32((_Value - _Minimum) / (_Maximum - _Minimum) * (W - 10));
+			Val = Convert.ToInt32((float)(_Value - _Minimum) / (float)(_Maximum - _Minimum) * (float)(W - 10));
 			Track = new Rectangle(Val, 0, 10, 20);
 			Knob = new Rectangle(Val, 4, 11, 14);
 

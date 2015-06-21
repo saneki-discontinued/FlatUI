@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.FormSkin = new FlatUI.FormSkin();
+			this.FlatTrackBar = new FlatUI.FlatTrackBar();
 			this.FlatToggleStyle3 = new FlatUI.FlatToggle();
 			this.FlatToggleStyle2 = new FlatUI.FlatToggle();
 			this.FlatToggleStyle1 = new FlatUI.FlatToggle();
@@ -65,6 +66,7 @@
 			this.FormSkin.BackColor = System.Drawing.Color.White;
 			this.FormSkin.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
 			this.FormSkin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(58)))), ((int)(((byte)(60)))));
+			this.FormSkin.Controls.Add(this.FlatTrackBar);
 			this.FormSkin.Controls.Add(this.FlatToggleStyle3);
 			this.FormSkin.Controls.Add(this.FlatToggleStyle2);
 			this.FormSkin.Controls.Add(this.FlatToggleStyle1);
@@ -88,6 +90,22 @@
 			this.FormSkin.Size = new System.Drawing.Size(730, 400);
 			this.FormSkin.TabIndex = 0;
 			this.FormSkin.Text = "FlatUI Example";
+			// 
+			// FlatTrackBar
+			// 
+			this.FlatTrackBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(70)))), ((int)(((byte)(73)))));
+			this.FlatTrackBar.HatchColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(148)))), ((int)(((byte)(92)))));
+			this.FlatTrackBar.Location = new System.Drawing.Point(394, 329);
+			this.FlatTrackBar.Maximum = 10;
+			this.FlatTrackBar.Minimum = 0;
+			this.FlatTrackBar.Name = "FlatTrackBar";
+			this.FlatTrackBar.ShowValue = false;
+			this.FlatTrackBar.Size = new System.Drawing.Size(288, 23);
+			this.FlatTrackBar.Style = FlatUI.FlatTrackBar._Style.Slider;
+			this.FlatTrackBar.TabIndex = 22;
+			this.FlatTrackBar.Text = "flatTrackBar1";
+			this.FlatTrackBar.TrackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
+			this.FlatTrackBar.Value = 5;
 			// 
 			// FlatToggleStyle3
 			// 
@@ -453,6 +471,7 @@
 		private FlatToggle FlatToggleStyle3;
 		private FlatToggle FlatToggleStyle2;
 		private FlatToggle FlatToggleStyle1;
+		private FlatTrackBar FlatTrackBar;
 	}
 }
 
