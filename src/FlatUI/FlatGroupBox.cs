@@ -46,8 +46,8 @@ namespace FlatUI
 			W = Width - 1;
 			H = Height - 1;
 
-			dynamic GP = null;
-			dynamic GP2 = null;
+			GraphicsPath GP = new GraphicsPath();
+			GraphicsPath GP2 = new GraphicsPath();
 			GraphicsPath GP3 = new GraphicsPath();
 			Rectangle Base = new Rectangle(8, 8, W - 16, H - 16);
 

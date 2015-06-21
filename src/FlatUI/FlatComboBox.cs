@@ -161,7 +161,7 @@ namespace FlatUI
 
 			Rectangle Base = new Rectangle(0, 0, W, H);
 			Rectangle Button = new Rectangle(Convert.ToInt32(W - 40), 0, W, H);
-			dynamic GP = null;
+			GraphicsPath GP = new GraphicsPath();
 			GraphicsPath GP2 = new GraphicsPath();
 
 			var _with16 = G;

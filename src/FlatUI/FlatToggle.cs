@@ -121,7 +121,7 @@ namespace FlatUI
 			W = Width - 1;
 			H = Height - 1;
 
-			dynamic GP = null;
+			GraphicsPath GP = new GraphicsPath();
 			GraphicsPath GP2 = new GraphicsPath();
 			Rectangle Base = new Rectangle(0, 0, W, H);
 			Rectangle Toggle = new Rectangle(Convert.ToInt32(W / 2), 0, 38, H);
