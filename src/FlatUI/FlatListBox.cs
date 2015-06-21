@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic;
+using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -97,7 +98,7 @@ namespace FlatUI
 			e.Graphics.TextRenderingHint = TextRenderingHint.ClearTypeGridFit;
 
 			//-- if selected
-			if (Strings.InStr(e.State.ToString(), "Selected,") > 0)
+			if (e.State.ToString().IndexOf("Selected,") >= 0)
 			{
 				//-- Base
 				e.Graphics.FillRectangle(new SolidBrush(_SelectedColor), new Rectangle(e.Bounds.X, e.Bounds.Y, e.Bounds.Width, e.Bounds.Height));

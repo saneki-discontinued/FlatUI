@@ -44,7 +44,7 @@ namespace FlatUI
 			}
 			catch (Exception ex)
 			{
-				Interaction.MsgBox(ex.Message);
+				MessageBox.Show(ex.Message);
 			}
 
 			base.OnDrawNode(e);
