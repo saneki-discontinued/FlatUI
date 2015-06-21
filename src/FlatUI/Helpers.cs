@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Windows.Forms;
 
 namespace FlatUI
 {
 	public static class Helpers
 	{
-
-		#region " Variables"
-		//static internal Graphics G;
-		//static internal Bitmap B;
-
-		public static readonly Color FlatColor = Color.FromArgb(35, 168, 109);
+		public static Color FlatColor = Color.FromArgb(35, 168, 109);
 
 		public static readonly StringFormat NearSF = new StringFormat
 		{
@@ -24,9 +20,6 @@ namespace FlatUI
 			Alignment = StringAlignment.Center,
 			LineAlignment = StringAlignment.Center
 		};
-		#endregion
-
-		#region " Functions"
 
 		public static GraphicsPath RoundRec(Rectangle Rectangle, int Curve)
 		{
@@ -94,6 +87,31 @@ namespace FlatUI
 			return GP;
 		}
 
-		#endregion
+		/// <summary>
+		/// Get the colorscheme of a Control from a parent FormSkin.
+		/// </summary>
+		/// <param name="control">Control</param>
+		/// <returns>Colors</returns>
+		/// <exception cref="System.ArgumentNullException"></exception>
+		public static FlatColors GetColors(Control control)
+		{
+			if (control == null)
+				throw new ArgumentNullException();
+
+			FlatColors colors = new FlatColors();
+
+			while((control.GetType() !=  typeof(FormSkin)) && control != null)
+			{
+				control = control.Parent;
+			}
+
+			if(control != null)
+			{
+				FormSkin skin = (FormSkin)control;
+				colors.Flat = skin.FlatColor;
+			}
+
+			return colors;
+		}
 	}
 }

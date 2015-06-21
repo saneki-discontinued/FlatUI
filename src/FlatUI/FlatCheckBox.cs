@@ -107,8 +107,8 @@ namespace FlatUI
 		}
 
 		private Color _BaseColor = Color.FromArgb(45, 47, 49);
-		private Color _BorderColor = Helpers.FlatColor;
 		private Color _TextColor = Color.FromArgb(243, 243, 243);
+		private Color _BorderColor = Helpers.FlatColor;
 
 		public FlatCheckBox()
 		{
@@ -122,6 +122,8 @@ namespace FlatUI
 
 		protected override void OnPaint(PaintEventArgs e)
 		{
+			this.UpdateColors();
+
 			Bitmap B = new Bitmap(Width, Height);
 			Graphics G = Graphics.FromImage(B);
 			W = Width - 1;
@@ -210,6 +212,13 @@ namespace FlatUI
 			e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
 			e.Graphics.DrawImageUnscaled(B, 0, 0);
 			B.Dispose();
+		}
+
+		private void UpdateColors()
+		{
+			FlatColors colors = Helpers.GetColors(this);
+
+			_BorderColor = colors.Flat;
 		}
 	}
 }

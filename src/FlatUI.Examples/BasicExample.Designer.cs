@@ -79,6 +79,7 @@
 			this.FormSkin.Controls.Add(this.FlatClose);
 			this.FormSkin.Controls.Add(this.FlatProgressBar);
 			this.FormSkin.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.FormSkin.FlatColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(168)))), ((int)(((byte)(109)))));
 			this.FormSkin.Font = new System.Drawing.Font("Segoe UI", 12F);
 			this.FormSkin.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(47)))), ((int)(((byte)(49)))));
 			this.FormSkin.HeaderMaximize = false;

@@ -39,8 +39,10 @@ namespace FlatUI
 		[Category("Colors")]
 		public Color FlatColor
 		{
-			get { return Helpers.FlatColor; }
+			// get { return Helpers.FlatColor; }
 			// set { Helpers.FlatColor = value; }
+			get { return _FlatColor; }
+			set { _FlatColor = value; }
 		}
 
 		[Category("Options")]
@@ -113,6 +115,7 @@ namespace FlatUI
 		private Color _HeaderColor = Color.FromArgb(45, 47, 49);
 		private Color _BaseColor = Color.FromArgb(60, 70, 73);
 		private Color _BorderColor = Color.FromArgb(53, 58, 60);
+		private Color _FlatColor = Helpers.FlatColor;
 		private Color TextColor = Color.FromArgb(234, 234, 234);
 
 		private Color _HeaderLight = Color.FromArgb(171, 171, 172);
@@ -152,7 +155,7 @@ namespace FlatUI
 
 			//-- Logo
 			_with2.FillRectangle(new SolidBrush(Color.FromArgb(243, 243, 243)), new Rectangle(8, 16, 4, 18));
-			_with2.FillRectangle(new SolidBrush(Helpers.FlatColor), 16, 16, 4, 18);
+			_with2.FillRectangle(new SolidBrush(FlatColor), 16, 16, 4, 18);
 			_with2.DrawString(Text, Font, new SolidBrush(TextColor), new Rectangle(26, 15, W, H), Helpers.NearSF);
 
 			//-- Border

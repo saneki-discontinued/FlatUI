@@ -26,6 +26,7 @@ namespace FlatUI
 		}
 
 		private Color _BaseColor = Color.FromArgb(60, 70, 73);
+		private Color _TextColor = Helpers.FlatColor;
 
 		public FlatGroupBox()
 		{
@@ -38,6 +39,8 @@ namespace FlatUI
 
 		protected override void OnPaint(PaintEventArgs e)
 		{
+			this.UpdateColors();
+
 			Bitmap B = new Bitmap(Width, Height);
 			Graphics G = Graphics.FromImage(B);
 			W = Width - 1;
@@ -67,7 +70,7 @@ namespace FlatUI
 			//-- if ShowText
 			if (ShowText)
 			{
-				_with7.DrawString(Text, Font, new SolidBrush(Helpers.FlatColor), new Rectangle(16, 16, W, H), Helpers.NearSF);
+				_with7.DrawString(Text, Font, new SolidBrush(_TextColor), new Rectangle(16, 16, W, H), Helpers.NearSF);
 			}
 
 			base.OnPaint(e);
@@ -75,6 +78,13 @@ namespace FlatUI
 			e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
 			e.Graphics.DrawImageUnscaled(B, 0, 0);
 			B.Dispose();
+		}
+
+		private void UpdateColors()
+		{
+			FlatColors colors = Helpers.GetColors(this);
+
+			_TextColor = colors.Flat;
 		}
 	}
 }

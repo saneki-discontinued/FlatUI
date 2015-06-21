@@ -115,6 +115,8 @@ namespace FlatUI
 
 		protected override void OnPaint(PaintEventArgs e)
 		{
+			this.UpdateColors();
+
 			Bitmap B = new Bitmap(Width, Height);
 			Graphics G = Graphics.FromImage(B);
 			W = Width;
@@ -193,6 +195,13 @@ namespace FlatUI
 			e.Graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
 			e.Graphics.DrawImageUnscaled(B, 0, 0);
 			B.Dispose();
+		}
+
+		private void UpdateColors()
+		{
+			FlatColors colors = Helpers.GetColors(this);
+
+			_BaseColor = colors.Flat;
 		}
 	}
 }
