@@ -214,6 +214,7 @@
 			// FlatTextBox
 			// 
 			this.FlatTextBox.BackColor = System.Drawing.Color.Transparent;
+			this.FlatTextBox.FocusOnHover = false;
 			this.FlatTextBox.Location = new System.Drawing.Point(370, 58);
 			this.FlatTextBox.MaxLength = 32767;
 			this.FlatTextBox.Multiline = false;

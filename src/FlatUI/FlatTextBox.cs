@@ -100,6 +100,14 @@ namespace FlatUI
 			}
 		}
 
+		private bool _FocusOnHover = false;
+		[Category("Options")]
+		public bool FocusOnHover
+		{
+			get { return _FocusOnHover; }
+			set { _FocusOnHover = value; }
+		}
+
 		[Category("Options")]
 		public override string Text
 		{
@@ -212,7 +220,7 @@ namespace FlatUI
 		{
 			base.OnMouseEnter(e);
 			State = MouseState.Over;
-			TB.Focus();
+			if(FocusOnHover) TB.Focus();
 			Invalidate();
 		}
 
