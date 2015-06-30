@@ -100,7 +100,7 @@ namespace FlatUI
 
 			FlatColors colors = new FlatColors();
 
-			while((control.GetType() !=  typeof(FormSkin)) && control != null)
+			while(control != null && (control.GetType() !=  typeof(FormSkin)))
 			{
 				control = control.Parent;
 			}
