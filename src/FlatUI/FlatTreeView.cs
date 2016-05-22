@@ -49,13 +49,13 @@ namespace FlatUI
 
 		public FlatTreeView()
 		{
-			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.UserPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer, true);
+			SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw | ControlStyles.OptimizedDoubleBuffer, true);
 			DoubleBuffered = true;
 
 			BackColor = _BaseColor;
 			ForeColor = Color.White;
 			LineColor = _LineColor;
-			DrawMode = TreeViewDrawMode.OwnerDrawAll;
+			DrawMode = TreeViewDrawMode.Normal;
 		}
 
 		protected override void OnPaint(PaintEventArgs e)
